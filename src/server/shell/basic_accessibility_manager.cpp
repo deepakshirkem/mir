@@ -88,6 +88,7 @@ void msh::BasicAccessibilityManager::repeat_rate_and_delay(
 
 void msh::BasicAccessibilityManager::mousekeys_enabled(bool on)
 {
+    fprintf(stderr, "mousekeys_enabled called with: %d\n", on);
     auto const state = mutable_state.lock();
     toggle_transformer(on, state->mousekeys_on, mouse_keys_transformer, event_transformer);
 }
